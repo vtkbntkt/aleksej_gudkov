@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/colorBackgroundStatus"/>
+
+    <corners android:radius="@dimen/status_corner_radius"/>
+    <padding
+        android:left="@dimen/background_padding_left"
+        android:top="@dimen/background_padding_top"
+        android:right="@dimen/background_padding_right"
+        android:bottom="@dimen/background_padding_bottom" />
+</shape>

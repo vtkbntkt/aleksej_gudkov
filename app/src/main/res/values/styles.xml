@@ -1,0 +1,101 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+
+    <style name="TabTheme" parent="AppTheme">
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+</style>
+
+    <style name="TCIndexStyle">
+        <item name="android:textColor">@color/colorTCindexText</item>
+        <item name="android:textSize">@dimen/TCindexText_size</item>
+    </style>
+
+    <style name="TCAddressStyle">
+        <item name="android:textColor">@color/colorTCadrdressText</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/TCadrdressText_size</item>
+    </style>
+
+    <style name="TCDateStyle">
+        <item name="android:textColor">@color/colorTCdateText</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/TCdateText_size</item>
+    </style>
+
+    <style name="TCCountStyle" parent="TCDateStyle">
+        <item name="android:textColor">@color/colorTCcountText</item>
+    </style>
+
+    <!-- DetailedActivity themes. -->
+    <style name="IndexStyle">
+        <item name="android:textColor">@color/colorTextMain</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_index_size</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <style name="StatusStyle">
+        <item name="android:textColor">@color/colorTextStatus</item>
+        <item name="android:background">@drawable/background_status</item>
+        <item name="android:textSize">@dimen/text_status_size</item>
+        <item name="android:onClick">onClick</item>
+
+
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/colorTextList</item>
+        <item name="android:textSize">@dimen/text_list_size</item>
+        <item name="android:onClick">onClick</item>
+
+
+    </style>
+
+    <style name="TextValueStyle" parent="TextStyle">
+        <item name="android:textColor">@color/colorTextMain</item>
+    </style>
+
+
+
+    <style name="PhotoStyle">
+        <item name="android:contentDescription">@string/photo</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <!-- NavigationView -->
+
+    <style name="EcontactStyle">
+        <item name="android:textColor">@color/colorTextEcontact</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/econtactText_size</item>
+    </style>
+
+</resources>

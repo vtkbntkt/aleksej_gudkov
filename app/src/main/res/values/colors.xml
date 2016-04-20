@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#557cac</color>
+    <color name="colorPrimaryDark">#446389</color>
+    <color name="colorAccent">#ff9c26</color>
+
+    <color name="colorBackgroundItem">#ffffff</color>
+    <color name="colorVerticalDivider">#cccccc</color>
+
+    <color name="colorTCindexText">#222222</color>
+    <color name="colorTCadrdressText">#999999</color>
+    <color name="colorTCdateText">#878787</color>
+    <color name="colorTCcountText">#cccccc</color>
+    <color name="colorTabIndicator">#fffcfd</color>
+
+
+    <!-- DetailedActivity -->
+    <color name="colorTextMain">#050505</color>
+    <color name="colorBackgroundStatus">#f89900</color>
+    <color name="colorTextList">#8f8f8f</color>
+    <color name="colorBackground">#ebebeb</color>
+    <color name="colorTextStatus">#ffffff</color>
+
+    <!-- NavigationView -->
+    <color name="colorTextEcontact">#ccd7e6</color>
+    <color name="colorItemText">#4a4a4a</color>
+    <color name="colorItemIcon">#4a4a4a</color>
+    <color name="colorPoweredText">#222222</color>
+
+
+
+
+</resources>

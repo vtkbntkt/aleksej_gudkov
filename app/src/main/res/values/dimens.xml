@@ -1,0 +1,70 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="fab_marginRight">24dp</dimen>
+    <dimen name="fab_marginBottom">72dp</dimen>
+    <dimen name="fab_width">56dp</dimen>
+    <dimen name="fab_height">56dp</dimen>
+
+
+    <dimen name="shadow_toolbar_height">4dp</dimen>
+    <dimen name="contentInsetStart_toolbar">72dp</dimen>
+
+    <dimen name="item_corner_radius">10dp</dimen>
+    <dimen name="vertical_item_space">8dp</dimen>
+    <dimen name="recycler_padding">8dp</dimen>
+    <dimen name="indicator_tab_height">4dp</dimen>
+
+
+    <dimen name="TCindexText_size">16sp</dimen>
+    <dimen name="TCindexText_minHeight">40dp</dimen>
+
+    <dimen name="TCadrdressText_size">14sp</dimen>
+    <dimen name="TCadrdressText_marginTop">6dp</dimen>
+
+    <dimen name="TCdateText_size">14sp</dimen>
+
+    <dimen name="TCdateLayout_marginTop">16dp</dimen>
+    <dimen name="TCdateLayout_marginRight">8dp</dimen>
+
+    <dimen name="TCImageLayout_paddingTop">16dp</dimen>
+    <dimen name="TCImageLayout_paddingLeft">20dp</dimen>
+    <dimen name="TCImageLayout_paddingBottom">16dp</dimen>
+
+    <dimen name="TCCompanyImage_width">40dp</dimen>
+    <dimen name="TCCompanyImage_height">40dp</dimen>
+
+    <dimen name="TCLikeImage_height">20dp</dimen>
+    <dimen name="TCLikeImage_width">20dp</dimen>
+
+    <dimen name="TCLikeCount_marginLeft">8dp</dimen>
+
+    <!-- DetailedActivity -->
+    <dimen name="text_index_size">16sp</dimen>
+    <dimen name="text_status_size">15sp</dimen>
+    <dimen name="text_list_size">14sp</dimen>
+    <dimen name="status_corner_radius">16dp</dimen>
+
+    <dimen name="background_padding_top">3dp</dimen>
+    <dimen name="background_padding_bottom">3dp</dimen>
+    <dimen name="background_padding_left">10dp</dimen>
+    <dimen name="background_padding_right">10dp</dimen>
+
+    <dimen name="vertical_margin">12dp</dimen>
+
+    <dimen name="photo_width">150dp</dimen>
+    <dimen name="photo_height">150dp</dimen>
+    <dimen name="horizontal_item_space">10dp</dimen>
+
+    <!-- NavigationView -->
+
+    <dimen name="header_height">100dp</dimen>
+    <dimen name="econtactText_size">24sp</dimen>
+    <dimen name="header_padding_bottom">24sp</dimen>
+    <dimen name="poweredText_margin">16dp</dimen>
+    <dimen name="poweredText_size">12sp</dimen>
+
+
+</resources>
