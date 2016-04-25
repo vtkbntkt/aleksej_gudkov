@@ -84,7 +84,7 @@ public class WaitingFragment extends Fragment {
                     public void onScroll() {
 
                         if (getActivity() instanceof MainActivity) {
-                            ((MainActivity) getActivity()).hideFab();
+                            ((MainActivity) getActivity()).hideFab(); //[Comment] BAD Make connection Fragment -> Activity with listeners
                         }
                     }
 

@@ -6,7 +6,7 @@ import com.gai.aleksej_gudkov.R;
 import java.util.ArrayList;
 
 
-public class DataBase {
+public class DataBase { //[Comment] It's not a data base
 
     private static String[][] sDataBase = {
             {"0", "CE-1257218",
@@ -360,7 +360,7 @@ public class DataBase {
 
     private static int findItem(long cardId){
 
-        int cardPos=0;
+        int cardPos=0; //[Comment] Wrong formatting
 
         for (int i=0;i<sDataBase.length;i++) {
             if (Long.parseLong(sDataBase[i][0]) == cardId) {

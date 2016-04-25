@@ -44,7 +44,7 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdap
 
     @Override
     public void onBindViewHolder(ImageRecyclerAdapter.ViewHolder holder, int position) {
-
+        //[Comment] Empty space? Wrong formatting
         Context context =
                 holder.mImageView.getContext();
 

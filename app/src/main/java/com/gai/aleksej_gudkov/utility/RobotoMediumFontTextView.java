@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class RobotoMediumFontTextView extends TextView {
 
-
+    //[Comment] Very bad. Copy/Paste code. Hardcode
 
     public RobotoMediumFontTextView(Context context) {
         super(context);
@@ -33,7 +33,7 @@ public class RobotoMediumFontTextView extends TextView {
 
     protected void onDraw (Canvas canvas) {
         super.onDraw(canvas);
-
+        //[Comment] What this method actually do?
 
     }
 }

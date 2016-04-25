@@ -22,7 +22,7 @@ public class ApplicationListViewAdapter extends
     private List<TaskCardCreator> mTaskCard;
 
     public ApplicationListViewAdapter(Context context, List<TaskCardCreator> taskCard) {
-        super(context, -1, taskCard);
+        super(context, -1, taskCard); //[Comment] What is -1?
         mContext = context;
         mTaskCard = taskCard;
     }
@@ -31,11 +31,12 @@ public class ApplicationListViewAdapter extends
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) mContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE); //[Comment] LayoutInflater.from(mContext);
+        //[Comment] Bad. Use viewholder for listview
 
         View rowView = inflater.inflate(R.layout.task_item, parent, false);
 
-        TextView mLikeCount=
+        TextView mLikeCount= //[Comment] Wrong names
                 (TextView) rowView.findViewById(R.id.like_count);
         TextView mTargetCompanyType=
                 (TextView) rowView.findViewById(R.id.target_company_type);
@@ -45,7 +46,7 @@ public class ApplicationListViewAdapter extends
                 (TextView) rowView.findViewById(R.id.reg_date);
         TextView mDaysRest=
                 (TextView) rowView.findViewById(R.id.days_rest);
-        ImageView mLikeImage=
+        ImageView mLikeImage= //[Comment] Bad formatting
                 (ImageView) rowView.findViewById(R.id.image_like_button);
         ImageView mSymbolImage=
                 (ImageView) rowView.findViewById(R.id.image_symbol);
