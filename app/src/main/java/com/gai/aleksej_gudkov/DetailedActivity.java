@@ -16,15 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gai.aleksej_gudkov.adapters.ImageRecyclerAdapter;
-import com.gai.aleksej_gudkov.data.DataBase;
+import com.gai.aleksej_gudkov.data.DataSet;
 import com.gai.aleksej_gudkov.utility.HorizontalSpaceItemDecoration;
 
 
 public class DetailedActivity extends AppCompatActivity implements View.OnClickListener {
-
     public static final String CARD_ID = "cardId";
     public static final long DEFAULT_CARD_ID = 0;
-
     private ActionBar actionBar;
     private String[] photoRef;
 
@@ -58,7 +56,6 @@ public class DetailedActivity extends AppCompatActivity implements View.OnClickL
                 new HorizontalSpaceItemDecoration(horizontalItemSpace));
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -70,65 +67,53 @@ public class DetailedActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-
     @Override
     public void onClick(View v) {
         CharSequence text = v.getClass().getSimpleName();
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
-
     public void initViews() {
-
-        TextView indexText = (TextView)findViewById(R.id.index);
-        TextView statusText = (TextView)findViewById(R.id.status);
-        TextView createText = (TextView)findViewById(R.id.created_date);
-        TextView regText = (TextView)findViewById(R.id.registered_date);
-        TextView deadlineText = (TextView)findViewById(R.id.deadline_date);
-        TextView respText = (TextView)findViewById(R.id.responsible_name);
-        TextView desText = (TextView)findViewById(R.id.description);
+        TextView indexText = (TextView) findViewById(R.id.index);
+        TextView statusText = (TextView) findViewById(R.id.status);
+        TextView createText = (TextView) findViewById(R.id.created_date);
+        TextView regText = (TextView) findViewById(R.id.registered_date);
+        TextView deadlineText = (TextView) findViewById(R.id.deadline_date);
+        TextView respText = (TextView) findViewById(R.id.responsible_name);
+        TextView desText = (TextView) findViewById(R.id.description);
 
         Intent intent = getIntent();
         long cardId = intent.getLongExtra(CARD_ID, DEFAULT_CARD_ID);
-
-        String actionbarTitle = DataBase.getTitle(cardId);
+        String actionbarTitle = DataSet.getTitle(cardId);
         actionBar.setTitle(actionbarTitle);
+        photoRef = DataSet.getRef(cardId);
 
-        photoRef = DataBase.getRef(cardId);
+        indexText.setText(DataSet.getIndex(cardId));
+        statusText.setText(DataSet.getStatus(cardId));
+        createText.setText(DataSet.getDateStart(cardId));
 
-        // null checking
-        indexText.setText(DataBase.getIndex(cardId));
-        statusText.setText(DataBase.getStatus(cardId));
-        createText.setText(DataBase.getDateStart(cardId));
-
-        if (DataBase.getDateReg(cardId)!=null){
-            regText.setText(DataBase.getDateReg(cardId));
-        }
-        else{
+        if (DataSet.getDateReg(cardId) != null) {
+            regText.setText(DataSet.getDateReg(cardId));
+        } else {
             regText.setVisibility(View.INVISIBLE);
         }
 
-        if (DataBase.getDateEnd(cardId)!=null){
-            deadlineText.setText(DataBase.getDateEnd(cardId));
-        }
-        else{
+        if (DataSet.getDateEnd(cardId) != null) {
+            deadlineText.setText(DataSet.getDateEnd(cardId));
+        } else {
             deadlineText.setVisibility(View.INVISIBLE);
         }
 
-        if (DataBase.getResp(cardId)!=null){
-            respText.setText(DataBase.getResp(cardId));
-        }
-        else{
+        if (DataSet.getResp(cardId) != null) {
+            respText.setText(DataSet.getResp(cardId));
+        } else {
             respText.setVisibility(View.INVISIBLE);
         }
 
-        if (DataBase.getDes(cardId)!=null){
-            desText.setText(DataBase.getDes(cardId));        }
-        else{
+        if (DataSet.getDes(cardId) != null) {
+            desText.setText(DataSet.getDes(cardId));
+        } else {
             desText.setVisibility(View.INVISIBLE);
         }
-
-
-
     }
 }

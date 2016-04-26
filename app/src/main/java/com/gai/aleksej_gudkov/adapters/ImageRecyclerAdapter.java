@@ -13,11 +13,9 @@ import com.squareup.picasso.Picasso;
 
 
 public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdapter.ViewHolder> {
-
     private String[] mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
         private ImageView mImageView;
 
         public ViewHolder(View v) {
@@ -27,27 +25,21 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdap
         }
     }
 
-
     public ImageRecyclerAdapter(String[] myDataset) {
         mDataset = myDataset;
     }
 
-
     @Override
     public ImageRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View v =
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.accident_photo, parent, false);
-
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ImageRecyclerAdapter.ViewHolder holder, int position) {
-
         Context context =
                 holder.mImageView.getContext();
-
         Picasso.with(context).load(mDataset[position]).into(holder.mImageView);
     }
 

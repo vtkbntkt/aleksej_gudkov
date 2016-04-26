@@ -17,60 +17,74 @@ import java.util.List;
 
 public class ApplicationListViewAdapter extends
         ArrayAdapter<TaskCardCreator> {
-
     private Context mContext;
     private List<TaskCardCreator> mTaskCard;
 
+    public static class ViewHolder {
+        private TextView mLikeCount;
+        private TextView mTargetCompanyType;
+        private TextView mAccidentAddress;
+        private TextView mRegDate;
+        private TextView mDaysRest;
+        private ImageView mLikeImage;
+        private ImageView mSymbolImage;
+
+        public ViewHolder(View convertView) {
+            mLikeCount =
+                    (TextView) convertView.findViewById(R.id.like_count);
+            mTargetCompanyType =
+                    (TextView) convertView.findViewById(R.id.target_company_type);
+            mAccidentAddress =
+                    (TextView) convertView.findViewById(R.id.accident_address);
+            mRegDate =
+                    (TextView) convertView.findViewById(R.id.reg_date);
+            mDaysRest =
+                    (TextView) convertView.findViewById(R.id.days_rest);
+            mLikeImage =
+                    (ImageView) convertView.findViewById(R.id.image_like_button);
+            mSymbolImage =
+                    (ImageView) convertView.findViewById(R.id.image_symbol);
+        }
+    }
+
     public ApplicationListViewAdapter(Context context, List<TaskCardCreator> taskCard) {
-        super(context, -1, taskCard);
+        super(context, android.R.layout.simple_list_item_1, taskCard);
         mContext = context;
         mTaskCard = taskCard;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
 
-        LayoutInflater inflater = (LayoutInflater) mContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View rowView = inflater.inflate(R.layout.task_item, parent, false);
-
-        TextView mLikeCount=
-                (TextView) rowView.findViewById(R.id.like_count);
-        TextView mTargetCompanyType=
-                (TextView) rowView.findViewById(R.id.target_company_type);
-        TextView mAccidentAddress=
-                (TextView) rowView.findViewById(R.id.accident_address);
-        TextView mRegDate=
-                (TextView) rowView.findViewById(R.id.reg_date);
-        TextView mDaysRest=
-                (TextView) rowView.findViewById(R.id.days_rest);
-        ImageView mLikeImage=
-                (ImageView) rowView.findViewById(R.id.image_like_button);
-        ImageView mSymbolImage=
-                (ImageView) rowView.findViewById(R.id.image_symbol);
-
-        mLikeCount.setText(
+        if (convertView == null) {
+            convertView =
+                    LayoutInflater.from(mContext).inflate(R.layout.task_item, parent, false);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        holder.mLikeCount.setText(
                 mTaskCard.get(position).getmLikeCount());
-        mTargetCompanyType.setText(
+        holder.mTargetCompanyType.setText(
                 mTaskCard.get(position).getmTargetCompanyType());
-        mAccidentAddress.setText(
+        holder.mAccidentAddress.setText(
                 mTaskCard.get(position).getmAccidentAddress());
-        mRegDate.setText(
+        holder.mRegDate.setText(
                 mTaskCard.get(position).getmRegDate());
-        mLikeImage.setImageResource(
+        holder.mLikeImage.setImageResource(
                 mTaskCard.get(position).getmLikeId());
-        mSymbolImage.setImageResource(
+        holder.mSymbolImage.setImageResource(
                 mTaskCard.get(position).getmSymbolId());
 
         if (mTaskCard.get(position).getmDaysRest() != null) {
-            mDaysRest.setText(
+            holder.mDaysRest.setText(
                     mTaskCard.get(position).getmDaysRest());
         } else {
-            mDaysRest.setVisibility(View.INVISIBLE);
+            holder.mDaysRest.setVisibility(View.INVISIBLE);
         }
-
-        return rowView;
+        return convertView;
     }
 
 }

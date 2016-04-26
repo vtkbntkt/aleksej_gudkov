@@ -1,6 +1,7 @@
 package com.gai.aleksej_gudkov.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,6 @@ import android.widget.ListView;
 import com.gai.aleksej_gudkov.listeners.CustomListViewScrollListener;
 import com.gai.aleksej_gudkov.DetailedActivity;
 import com.gai.aleksej_gudkov.adapters.ApplicationListViewAdapter;
-import com.gai.aleksej_gudkov.MainActivity;
 import com.gai.aleksej_gudkov.R;
 import com.gai.aleksej_gudkov.data.TaskCardCreator;
 
@@ -22,22 +22,18 @@ import java.util.List;
 
 
 public class WaitingFragment extends Fragment {
-
     private List<TaskCardCreator> mTaskCard;
     private static final String WAITING_TASK = "waitingdb";
+    public ListViewScrollListener mListListener;
 
     public WaitingFragment() {
     }
 
     public static WaitingFragment newInstance(ArrayList<TaskCardCreator> taskCard) {
-
         WaitingFragment waitingFragment = new WaitingFragment();
-
         Bundle args = new Bundle();
-
         args.putParcelableArrayList(WAITING_TASK, taskCard);
         waitingFragment.setArguments(args);
-
         return waitingFragment;
     }
 
@@ -53,7 +49,6 @@ public class WaitingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView =
                 inflater.inflate(R.layout.fragment_waiting, container, false);
         ListView listview =
@@ -71,7 +66,7 @@ public class WaitingFragment extends Fragment {
                 long cardId =
                         mTaskCard.get(position).getmItemId();
                 Intent intent =
-                        new Intent(getActivity(),DetailedActivity.class);
+                        new Intent(getActivity(), DetailedActivity.class);
                 intent.putExtra(DetailedActivity.CARD_ID, cardId);
                 startActivity(intent);
             }
@@ -80,24 +75,37 @@ public class WaitingFragment extends Fragment {
 
         listview.setOnTouchListener(new CustomListViewScrollListener(getActivity(),
                 new CustomListViewScrollListener.CustomScrollListener() {
+
                     @Override
                     public void onScroll() {
-
-                        if (getActivity() instanceof MainActivity) {
-                            ((MainActivity) getActivity()).hideFab();
-                        }
+                        mListListener.scrollList();
                     }
 
                     @Override
                     public void onStopScroll() {
-
-                        if (getActivity() instanceof MainActivity) {
-                            ((MainActivity) getActivity()).showFab();
-                        }
+                        mListListener.stopScrollList();
                     }
                 }));
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        try {
+            mListListener = (ListViewScrollListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement ListViewScrollListener");
+        }
+    }
+
+    public interface ListViewScrollListener {
+        void scrollList();
+
+        void stopScrollList();
     }
 
 }

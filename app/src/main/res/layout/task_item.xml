@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/item_background"
@@ -39,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/TCLikeCount_marginLeft"
-                android:text="49"/>
+                tools:text="49"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -59,7 +61,7 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="2"
-            android:text="Демонтаж"
+            tools:text="Демонтаж"
             android:minHeight="@dimen/TCindexText_minHeight"
             />
 
@@ -72,7 +74,7 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
-            android:text="Вул. Вадима Гетьмана, 42 Вул. Вадима Гетьмана" />
+            tools:text="Вул. Вадима Гетьмана, 42 Вул. Вадима Гетьмана" />
 
 
 
@@ -91,7 +93,7 @@
                 android:layout_weight="1"
                 android:gravity="left"
                 android:includeFontPadding="false"
-                android:text="Кві 26, 2016"/>
+                tools:text="Кві 26, 2016"/>
 
             <TextView
                 android:id="@+id/days_rest"
@@ -101,7 +103,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:includeFontPadding="false"
-                android:text="-14 днів"/>
+                tools:text="-14 днів"/>
         </LinearLayout>
     </LinearLayout>
 

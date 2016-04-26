@@ -14,10 +14,8 @@ public class CustomListViewScrollListener implements View.OnTouchListener {
     private CustomScrollListener mCustomScrollListener;
     private boolean mIsScrolling = false;
 
-
     public CustomListViewScrollListener(final Context context,
                                         final CustomScrollListener customScrollListener) {
-
         mCustomScrollListener = customScrollListener;
         mGestureDetector = new GestureDetector(context,
                 new GestureDetector.SimpleOnGestureListener() {
@@ -27,7 +25,6 @@ public class CustomListViewScrollListener implements View.OnTouchListener {
                                             float distanceX, float distanceY) {
                         mIsScrolling = true;
                         mCustomScrollListener.onScroll();
-
                         return false;
                     }
                 });
@@ -36,25 +33,21 @@ public class CustomListViewScrollListener implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-
         mGestureDetector.onTouchEvent(event);
 
-        if(event.getAction() == MotionEvent.ACTION_UP||
-                event.getAction() == MotionEvent.ACTION_CANCEL ) {
-
-            if(mIsScrolling ) {
-                mIsScrolling  = false;
+        if (event.getAction() == MotionEvent.ACTION_UP ||
+                event.getAction() == MotionEvent.ACTION_CANCEL) {
+            if (mIsScrolling) {
+                mIsScrolling = false;
                 mCustomScrollListener.onStopScroll();
-            };
+            }
         }
-
         return false;
     }
 
     public interface CustomScrollListener {
-
         void onScroll();
-        void onStopScroll();
 
+        void onStopScroll();
     }
 }

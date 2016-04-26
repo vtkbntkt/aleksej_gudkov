@@ -21,7 +21,6 @@ import java.util.List;
 
 
 public class InprogressFragment extends Fragment {
-
     private List<TaskCardCreator> mInprogressTasks;
     private static final String INPROGRESS_TASK = "inprogressdb";
 
@@ -30,7 +29,6 @@ public class InprogressFragment extends Fragment {
     }
 
     public static InprogressFragment newInstance(ArrayList<TaskCardCreator> inprogressTasks) {
-
         InprogressFragment inprogressFragment = new InprogressFragment();
 
         Bundle args = new Bundle();
@@ -46,16 +44,13 @@ public class InprogressFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-
             mInprogressTasks =
                     getArguments().getParcelableArrayList(INPROGRESS_TASK);
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View rootView =
                 inflater.inflate(R.layout.fragment_inprogress, container, false);
 
@@ -79,17 +74,17 @@ public class InprogressFragment extends Fragment {
         recyclerView.addOnItemTouchListener(
                 new RecyclerTouchListener(getActivity(), recyclerView, new RecyclerTouchListener.ClickListener() {
 
-            @Override
-            public void onClick(View view, int position) {
+                    @Override
+                    public void onClick(View view, int position) {
 
-                long cardId =
-                        mInprogressTasks.get(position).getmItemId();
-                Intent intent =
-                        new Intent(getActivity(),DetailedActivity.class);
-                intent.putExtra(DetailedActivity.CARD_ID, cardId);
-                startActivity(intent);
-            }
-        }));
+                        long cardId =
+                                mInprogressTasks.get(position).getmItemId();
+                        Intent intent =
+                                new Intent(getActivity(), DetailedActivity.class);
+                        intent.putExtra(DetailedActivity.CARD_ID, cardId);
+                        startActivity(intent);
+                    }
+                }));
 
         return rootView;
     }

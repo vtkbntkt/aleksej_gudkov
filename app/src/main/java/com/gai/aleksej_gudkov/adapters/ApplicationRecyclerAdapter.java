@@ -20,7 +20,6 @@ public class ApplicationRecyclerAdapter extends
     private List<TaskCardCreator> mInprogressTasks;
 
     public static class TaskCardHolder extends RecyclerView.ViewHolder {
-
         private TextView mLikeCount;
         private TextView mTargetCompanyType;
         private TextView mAccidentAddress;
@@ -59,7 +58,6 @@ public class ApplicationRecyclerAdapter extends
     public ApplicationRecyclerAdapter.TaskCardHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v =
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item, parent, false);
-
         return new TaskCardHolder(v);
     }
 
@@ -68,22 +66,16 @@ public class ApplicationRecyclerAdapter extends
     public void onBindViewHolder(ApplicationRecyclerAdapter.TaskCardHolder holder, int position) {
         holder.mLikeCount.setText(
                 mInprogressTasks.get(position).getmLikeCount());
-
         holder.mTargetCompanyType.setText(
                 mInprogressTasks.get(position).getmTargetCompanyType());
-
         holder.mAccidentAddress.setText(
                 mInprogressTasks.get(position).getmAccidentAddress());
-
         holder.mRegDate.setText(
                 mInprogressTasks.get(position).getmRegDate());
-
         holder.mLikeImage.setImageResource(
                 mInprogressTasks.get(position).getmLikeId());
-
         holder.mSymbolImage.setImageResource(
                 mInprogressTasks.get(position).getmSymbolId());
-
         if (mInprogressTasks.get(position).getmDaysRest() != null) {
             holder.mDaysRest.setText(
                     mInprogressTasks.get(position).getmDaysRest());

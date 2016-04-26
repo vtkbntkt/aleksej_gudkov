@@ -41,6 +41,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="snackbar_text">Replace with your own action</string>
+    <string name="snackbar_action">Action</string>
+
+    <string name="robotomedium_path">fonts/roboto_medium.ttf</string>
+
+
 
 
 
